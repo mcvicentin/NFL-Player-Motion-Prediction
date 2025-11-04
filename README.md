@@ -81,3 +81,11 @@ optuna
 ```
 pip install -r requirements.txt
 ```
+
+## Data
+```
+data/train/
+  week01_input.csv
+  week01_output.csv
+  ...
+```

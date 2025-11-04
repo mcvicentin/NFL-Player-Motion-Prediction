@@ -65,7 +65,7 @@ cd nfl-player-motion-prediction
 
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
-
+```
 
 **## Requirements**
 ```

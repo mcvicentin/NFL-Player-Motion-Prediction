@@ -50,3 +50,20 @@ nfl-player-motion-prediction/
 ├─ optuna_results.csv
 └─ optuna_study.db
 ```
+
+
+> **Note:** Large files under `data/` and `models/` should not be committed. Use `.gitignore`, DVC, or Git LFS as needed.
+
+---
+
+
+## Setup
+
+```bash
+git clone https://github.com/<your-user>/nfl-player-motion-prediction.git
+cd nfl-player-motion-prediction
+
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+

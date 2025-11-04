@@ -112,10 +112,10 @@ python src/train.py \
 
 The script will:
 
-- build datasets from data/train/
+- build datasets from ```data/train/``'
 - train the SeqInterModel (encoder → graph attention → decoder)
 - print training/validation losses & RMSE
-- save the best weights and a JSON log in models/
+- save the best weights and a JSON log in ```models/```
 
 
 ## Hyperparameter Search (Optuna)

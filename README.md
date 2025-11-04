@@ -154,3 +154,11 @@ Run Optuna to explore a search space of architectural and training parameters:
 ## License
 Released under the MIT License.
 [See LICENSE](LICENSE) for details
+
+## Author
+**Marcelo C Vicentin**
+
+## Acknowledgments
+
+  - NFL Big Data Bowl organizers and Kaggle.
+  - Open-source libraries powering this project: PyTorch, Optuna, scikit-learn, pandas, NumPy, Matplotlib, tqdm.

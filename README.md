@@ -65,5 +65,20 @@ cd nfl-player-motion-prediction
 
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
+
+
+**## Requirements**
+```
+python>=3.10
+torch>=2.0.0
+numpy
+pandas
+scikit-learn
+matplotlib
+tqdm
+optuna
+```
+
+
 pip install -r requirements.txt
 

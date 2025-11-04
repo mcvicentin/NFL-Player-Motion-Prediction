@@ -17,7 +17,7 @@ This repository contains clean, modular code for data loading, model training, h
 ---
 
 ## Repository Structure
-
+'''
 nfl-player-motion-prediction/
 │
 ├─ README.md
@@ -49,3 +49,4 @@ nfl-player-motion-prediction/
 ├─ best_model.pth
 ├─ optuna_results.csv
 └─ optuna_study.db
+'''

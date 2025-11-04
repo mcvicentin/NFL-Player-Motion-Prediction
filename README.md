@@ -67,7 +67,7 @@ python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 ```
 
-**## Requirements**
+## Requirements
 ```
 python>=3.10
 torch>=2.0.0
@@ -78,7 +78,6 @@ matplotlib
 tqdm
 optuna
 ```
-
-
+```
 pip install -r requirements.txt
-
+```

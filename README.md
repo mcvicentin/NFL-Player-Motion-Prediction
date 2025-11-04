@@ -94,3 +94,25 @@ data/train/
 week01_input.csv
 week01_output.csv
 ```
+
+## Quick start (single train)
+
+```
+python src/train.py \
+  --epochs 100 \
+  --n_train 700 \
+  --n_val 150 \
+  --L 11 \
+  --k_neighbors 12 \
+  --hid 256 \
+  --attn_dim 192 \
+  --lr 5.9e-4 \
+  --w_smooth 0.09
+```
+
+The script will:
+
+- build datasets from data/train/
+- train the SeqInterModel (encoder → graph attention → decoder)
+- print training/validation losses & RMSE
+- save the best weights and a JSON log in models/

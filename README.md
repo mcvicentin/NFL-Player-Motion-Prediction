@@ -116,3 +116,40 @@ The script will:
 - train the SeqInterModel (encoder → graph attention → decoder)
 - print training/validation losses & RMSE
 - save the best weights and a JSON log in models/
+
+
+## Hyperparameter Search (Optuna)
+
+Run Optuna to explore a search space of architectural and training parameters:
+
+- ```models/optuna_results.csv``` — all trials summary
+- ```models/*.pth & *.json``` — best checkpoints and metadata
+- ```models/optuna_study.db``` — resumable Optuna study database
+
+
+## Model Overview
+
+- **PastEncoder (GRU)**: encodes a window **L** of per-player features
+
+  - Input features per timestep (14):
+      ```x, y, vx, vy, role_onehot(4), dist_to_ball, sinθ_ball, cosθ_ball, dist_to_center, sinθ_c, cosθ_c```
+
+- **GraphAttention**: attends to k nearest neighbors using keys/values + an edge MLP over (distance, sinθ, cosθ)
+
+Decoder (GRU): autoregressively predicts (x, y) for T future frames, with:
+
+scheduled sampling (teacher forcing probability ramp-up)
+
+speed clipping using v_max * dt to ensure physical plausibility
+
+Losses
+
+Huber on positions (role-weighted; higher for Passer/Targeted Receiver)
+
+Smoothness on acceleration (reduces jitter)
+
+Direction loss for angular coherence between consecutive velocities
+
+Metric
+
+RMSE over (x, y) on valid targets

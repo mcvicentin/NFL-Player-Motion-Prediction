@@ -136,20 +136,16 @@ Run Optuna to explore a search space of architectural and training parameters:
 
 - **GraphAttention**: attends to k nearest neighbors using keys/values + an edge MLP over (distance, sinθ, cosθ)
 
-Decoder (GRU): autoregressively predicts (x, y) for T future frames, with:
+- **Decoder (GRU)**: autoregressively predicts (x, y) for T future frames, with:
 
-scheduled sampling (teacher forcing probability ramp-up)
+  - scheduled sampling (teacher forcing probability ramp-up)
+  - speed clipping using v_max * dt to ensure physical plausibility
 
-speed clipping using v_max * dt to ensure physical plausibility
+- **Losses**
 
-Losses
+  - Huber on positions (role-weighted; higher for Passer/Targeted Receiver)
+  - Smoothness on acceleration (reduces jitter)
+  - Direction loss for angular coherence between consecutive velocities
 
-Huber on positions (role-weighted; higher for Passer/Targeted Receiver)
-
-Smoothness on acceleration (reduces jitter)
-
-Direction loss for angular coherence between consecutive velocities
-
-Metric
-
+- **Metric**
 RMSE over (x, y) on valid targets

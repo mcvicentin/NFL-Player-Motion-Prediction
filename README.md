@@ -148,4 +148,9 @@ Run Optuna to explore a search space of architectural and training parameters:
   - Direction loss for angular coherence between consecutive velocities
 
 - **Metric**
-RMSE over (x, y) on valid targets
+  - RMSE over (x, y) on valid targets
+ 
+
+## License
+Released under the MIT License.
+[See LICENSE](LICENSE) for details

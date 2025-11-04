@@ -89,6 +89,8 @@ Download the competition data from Kaggle:
 👉 [NFL Big Data Bowl 2026 – Prediction](https://www.kaggle.com/competitions/nfl-big-data-bowl-2026-prediction)
 
 Then place the CSV files under:
+```
 data/train/
 week01_input.csv
 week01_output.csv
+```
